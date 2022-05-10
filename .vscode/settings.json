@@ -1,0 +1,6 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}/unity/native_src",
+    "files.associations": {
+        "map": "cpp"
+    }
+}
