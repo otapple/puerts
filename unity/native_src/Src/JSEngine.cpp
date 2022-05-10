@@ -642,6 +642,13 @@ namespace puerts
         MainIsolate->LowMemoryNotification();
     }
 
+    void JSEngine::MemoryPressureNotification(int level)
+    {
+#if !WITH_QUICKJS
+        MainIsolate->MemoryPressureNotification(static_cast<v8::MemoryPressureLevel>(level));
+#endif
+    }
+
     void JSEngine::CreateInspector(int32_t Port)
     {
         v8::Isolate* Isolate = MainIsolate;

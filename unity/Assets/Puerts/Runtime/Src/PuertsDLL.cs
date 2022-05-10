@@ -171,6 +171,9 @@ namespace Puerts
         public static extern void LowMemoryNotification(IntPtr isolate);
 
         [DllImport(DLLNAME, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void MemoryPressureNotification(IntPtr isolate, int level);
+
+        [DllImport(DLLNAME, CallingConvention = CallingConvention.Cdecl)]
         public static extern void SetGeneralDestructor(IntPtr isolate, IntPtr generalDestructor);
 
         public static void SetGeneralDestructor(IntPtr isolate, V8DestructorCallback generalDestructor)

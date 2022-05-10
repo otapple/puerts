@@ -145,6 +145,7 @@ public:
     CSharpDestructorCallback GeneralDestructor;
 
     PUERTS_EXPORT_FOR_UT void LowMemoryNotification();
+    PUERTS_EXPORT_FOR_UT void MemoryPressureNotification(int level);
 
     PUERTS_EXPORT_FOR_UT JSFunction* CreateJSFunction(v8::Isolate* InIsolate, v8::Local<v8::Context> InContext, v8::Local<v8::Function> InFunction);
 

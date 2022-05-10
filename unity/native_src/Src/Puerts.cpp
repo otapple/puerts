@@ -147,6 +147,13 @@ V8_EXPORT void LowMemoryNotification(v8::Isolate *Isolate)
     JsEngine->LowMemoryNotification();
 }
 
+V8_EXPORT void MemoryPressureNotification(v8::Isolate *Isolate, int level)
+{
+    auto JsEngine = FV8Utils::IsolateData<JSEngine>(Isolate);
+    JsEngine->MemoryPressureNotification(level);
+}
+
+
 V8_EXPORT void SetGeneralDestructor(v8::Isolate *Isolate, CSharpDestructorCallback GeneralDestructor)
 {
     auto JsEngine = FV8Utils::IsolateData<JSEngine>(Isolate);
